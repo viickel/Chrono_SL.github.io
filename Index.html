@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronomètres Escrime</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chrono Chorégraphie SL</h1>
+        
+        <div class="chrono-card">
+            <h2>Total Prestation</h2>
+            <div class="timer" id="totalPrestation">00:00:00</div>
+            <div class="controls">
+                <button class="play-pause" data-target="totalPrestation"><i class="fa-solid fa-play"></i></button>
+                <button class="reset" data-target="totalPrestation"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
+            <div class="manual-input">
+                <label for="inputTotalPrestation">Saisie manuelle :</label>
+                <input type="text" id="inputTotalPrestation" placeholder="MM:SS:ms">
+                <button class="set-time" data-target="totalPrestation">Ok</button>
+            </div>
+        </div>
+
+        <div class="second-row-cards">
+            <div class="chrono-card">
+                <h2>Temps d'Opposition</h2>
+                <div class="timer" id="tempsOpposition">00:00:00</div>
+                <div class="controls">
+                    <button class="play-pause" data-target="tempsOpposition"><i class="fa-solid fa-play"></i></button>
+                    <button class="reset" data-target="tempsOpposition"><i class="fa-solid fa-rotate-right"></i></button>
+                </div>
+                <div class="manual-input">
+                    <label for="inputTempsOpposition">Saisie manuelle :</label>
+                    <input type="text" id="inputTempsOpposition" placeholder="MM:SS:ms">
+                    <button class="set-time" data-target="tempsOpposition">Ok</button>
+                </div>
+                <div class="percentage-display" id="pourcentageOpposition"></div>
+            </div>
+            
+            <div class="chrono-card">
+                <h2>Temps de Bataille</h2>
+                <div class="timer" id="tempsBataille">00:00:00</div>
+                <div class="controls">
+                    <button class="play-pause" data-target="tempsBataille"><i class="fa-solid fa-play"></i></button>
+                    <button class="reset" data-target="tempsBataille"><i class="fa-solid fa-rotate-right"></i></button>
+                </div>
+                <div class="manual-input">
+                    <label for="inputTempsBataille">Saisie manuelle :</label>
+                    <input type="text" id="inputTempsBataille" placeholder="MM:SS:ms">
+                    <button class="set-time" data-target="tempsBataille">Ok</button>
+                </div>
+                <div class="percentage-display" id="pourcentageBataille"></div>
+            </div>
+        </div>
+
+        <div class="bottom-buttons">
+            <button id="toggleManualInput" class="set-time">Saisie Manuelle</button>
+            <button id="resetAll" class="reset"><i class="fa-solid fa-arrows-rotate"></i> Réinitialiser Tout</button>
+        </div>
+        </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

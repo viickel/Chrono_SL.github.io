@@ -1,0 +1,251 @@
+/* Importation des polices Google Fonts pour un style futuriste */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+/* --- Styles de base et mise en page --- */
+
+/* Corps de la page : Fond sombre et dégradé, police par défaut et centrage */
+body {
+    font-family: 'Roboto Mono', monospace; /* Police futuriste monospace */
+    background: linear-gradient(135deg, #0d0d1a, #1a1a2e); /* Dégradé sombre */
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* Conteneur principal : Flexbox pour une organisation claire et un espacement */
+.container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espace entre les éléments */
+}
+
+/* Titre de l'application : Style néon avec ombre et couleur vive */
+h1 {
+    font-family: 'Orbitron', sans-serif; /* Police futuriste pour le titre */
+    text-align: center;
+    color: #4df5d9; /* Couleur cyan-vert */
+    text-shadow: 0 0 5px #4df5d9, 0 0 10px #4df5d9; /* Effet de lueur néon */
+    margin-bottom: 10px;
+}
+
+/* --- Styles des cartes de chronomètre --- */
+
+/* Carte de chronomètre : Effet de verre futuriste et lueur */
+.chrono-card {
+    background: rgba(40, 40, 60, 0.4); /* Fond semi-transparent */
+    border: 1px solid rgba(77, 245, 217, 0.3); /* Bordure fine de couleur néon */
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(77, 245, 217, 0.2); /* Ombre de lueur subtile */
+    text-align: center;
+    backdrop-filter: blur(5px); /* Effet de flou derrière pour un look "verre" */
+}
+
+/* Sous-titres des cartes (ex: Total Prestation) */
+.chrono-card h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #4df5d9;
+    text-shadow: 0 0 5px #4df5d9;
+    margin-bottom: 6px;
+}
+
+/* Affichage du temps : Grand format néon */
+.timer {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 3.5em;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 3px #ffffff, 0 0 10px #4df5d9; /* Effet de lueur néon plus intense */
+    margin: 7px 0;
+}
+
+/* --- Styles des boutons et entrées manuelles --- */
+
+/* Conteneur des boutons de contrôle */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Boutons Play/Pause/Reset : Style uniforme et effet de lueur */
+.controls button, .set-time, #resetAll {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px; /* Forme de capsule */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; /* Transition pour l'interactivité */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Bouton Play/Pause : Couleur et lueur vertes */
+.play-pause {
+    background-color: #28a745;
+    color: #0d0d1a;
+    box-shadow: 0 0 15px #28a745;
+}
+
+/* Bouton Reset : Couleur et lueur rouges */
+.reset {
+    background-color: #dc3545;
+    color: #0d0d1a;
+    box-shadow: 0 0 15px #dc3545;
+}
+
+/* Effet au survol : Légère lueur et grossissement */
+.controls button:hover, .set-time:hover, #resetAll:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 25px;
+}
+
+/* Effet au clic : Rétrécissement */
+.controls button:active, .set-time:active, #resetAll:active {
+    transform: scale(0.95);
+}
+
+/* Saisie manuelle et bouton de validation */
+.manual-input {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.manual-input label {
+    font-size: 0.9em;
+    color: #b0e0d8;
+}
+
+.manual-input input {
+    background: rgba(40, 40, 60, 0.6);
+    border: 1px solid #4df5d9;
+    color: #e0e0e0;
+    padding: 8px 12px;
+    border-radius: 5px;
+    width: 120px;
+}
+
+/* Bouton de validation (Ok) */
+.set-time {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 0 15px #007bff;
+}
+
+/* Affichage des pourcentages */
+.percentage-display {
+    margin-top: 15px;
+    font-weight: 700;
+    color: #b0e0d8;
+    text-shadow: 0 0 5px #b0e0d8;
+}
+
+/* Styles pour les icônes Font Awesome */
+.controls button i {
+    color: #e0e0e0; /* Couleur claire pour les icônes */
+    font-size: 1.2em; /* Taille légèrement plus grande que le texte du bouton */
+    text-shadow: 0 0 5px #e0e0e0; /* Effet de lueur subtile */
+}
+
+/* Ajustement pour le bouton de réinitialisation globale */
+#resetAll i {
+    margin-right: 5px; /* Petit espace entre l'icône et le texte */
+}
+
+
+/* Cache les sections de saisie manuelle par défaut */
+.manual-input {
+    display: none;
+}
+
+/* Affiche les sections de saisie manuelle lorsque la classe 'show' est présente */
+.chrono-card.show-manual-input .manual-input {
+    display: flex;
+}
+
+/* Style pour le conteneur des boutons du bas */
+.bottom-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+
+
+
+/* --- Styles pour les écrans plus petits (smartphones) --- */
+
+@media (max-width: 600px) {
+    .container {
+        gap: 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .timer {
+        font-size: 2.5em;
+    }
+    
+    .controls button, .set-time, #resetAll {
+        padding: 10px 18px;
+        font-size: 0.9em;
+    }
+    
+    .manual-input {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .manual-input input {
+        width: 150px; /* Plus large pour la saisie tactile */
+        text-align: center;
+    }
+
+    /* --- Mise en page adaptative pour le mode paysage --- */
+
+/* Applique ces styles lorsque l'écran est plus large que haut (mode paysage) et a une largeur minimale de 600px */
+@media (orientation: landscape) and (min-width: 600px) {
+
+    /* Aligne les éléments horizontalement */
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante */
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    /* Le titre et la carte "Total Prestation" occupent toute la largeur */
+    h1, .chrono-card:first-of-type {
+        width: 100%;
+    }
+
+    /* Crée un nouveau conteneur pour les deux dernières cartes */
+    .second-row-cards {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+        width: 100%;
+    }
+
+    /* Les cartes "Temps d'Opposition" et "Temps de Bataille" se partagent la largeur */
+    .chrono-card:nth-of-type(2), 
+    .chrono-card:nth-of-type(3) {
+        flex: 1;
+    }
+}
+}
