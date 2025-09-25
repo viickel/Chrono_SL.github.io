@@ -11,12 +11,6 @@ const timers = {
         isRunning: false,
         display: document.getElementById('tempsOpposition')
     },
-    tempsBataille: {
-        time: 0,
-        interval: null,
-        isRunning: false,
-        display: document.getElementById('tempsBataille')
-    }
 };
 
 // Fonction pour formater le temps en MM:SS:ms
@@ -104,8 +98,7 @@ function resetAllTimers() {
 function updatePercentages() {
     const totalPrestation = timers.totalPrestation.time;
     const tempsOpposition = timers.tempsOpposition.time;
-    const tempsBataille = timers.tempsBataille.time;
-
+    
     // Pourcentage d'opposition par rapport au total
     if (totalPrestation > 0) {
         const percentageOpposition = ((tempsOpposition / totalPrestation) * 100).toFixed(2);
@@ -114,13 +107,6 @@ function updatePercentages() {
         document.getElementById('pourcentageOpposition').textContent = '';
     }
 
-    // Pourcentage de bataille par rapport à l'opposition
-    if (tempsOpposition > 0) {
-        const percentageBataille = ((tempsBataille / tempsOpposition) * 100).toFixed(2);
-        document.getElementById('pourcentageBataille').textContent = `(${percentageBataille} % de bataille)`;
-    } else {
-        document.getElementById('pourcentageBataille').textContent = '';
-    }
 }
 
 // Fonction pour la saisie manuelle

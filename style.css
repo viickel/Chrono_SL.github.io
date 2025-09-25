@@ -18,10 +18,10 @@ body {
 /* Conteneur principal : Flexbox pour une organisation claire et un espacement */
 .container {
     width: 100%;
-    max-width: 800px;
+    max-width: 700px;
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espace entre les éléments */
+    gap: 30px; /* Espace entre les éléments */
 }
 
 /* Titre de l'application : Style néon avec ombre et couleur vive */
@@ -31,6 +31,7 @@ h1 {
     color: #4df5d9; /* Couleur cyan-vert */
     text-shadow: 0 0 5px #4df5d9, 0 0 10px #4df5d9; /* Effet de lueur néon */
     margin-bottom: 10px;
+    margin-top: 1px;
 }
 
 /* --- Styles des cartes de chronomètre --- */
@@ -191,7 +192,7 @@ h1 {
     }
 
     h1 {
-        font-size: 2.2em;
+        font-size: 2em;
     }
     
     .timer {
@@ -224,7 +225,7 @@ h1 {
         flex-wrap: wrap; /* Permet aux cartes de passer à la ligne suivante */
         justify-content: center;
         align-items: flex-start;
-        gap: 20px;
+        gap: 10px;
     }
 
     /* Le titre et la carte "Total Prestation" occupent toute la largeur */
